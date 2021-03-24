@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import vn.binhld.hola.R;
 import vn.binhld.hola.ui.main.MainActivity;
@@ -39,4 +42,6 @@ public class SpashActivity extends AppCompatActivity {
     public void startLoginActivity() {
 
     }
+
+    // todo: check network configuration
 }

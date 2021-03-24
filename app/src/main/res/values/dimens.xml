@@ -6,4 +6,6 @@
     <dimen name="splash_icon_height">125dp</dimen>
     <dimen name="splash_text_margin_bottom">32dp</dimen>
     <dimen name="splash_text_bottom_size">32sp</dimen>
+    <dimen name="splash_text_bottom_weight">300</dimen>
+
 </resources>
