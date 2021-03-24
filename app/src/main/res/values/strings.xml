@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">hola</string>
+    <string name="splash_text_bottom">hola messenger</string>
 </resources>
