@@ -9,21 +9,10 @@
     <ImageView
         android:layout_width="@dimen/splash_icon_width"
         android:layout_height="@dimen/splash_icon_height"
-        android:src="@drawable/ic_cloud_hola"
+        android:src="@drawable/ic_app_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/splash_text_bottom_size"
-        android:text="@string/splash_text_bottom"
-        android:textSize="@dimen/splash_text_bottom_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:fontFamily="sans-serif-condensed-light"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
