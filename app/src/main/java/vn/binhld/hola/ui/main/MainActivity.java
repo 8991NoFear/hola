@@ -3,6 +3,7 @@ package vn.binhld.hola.ui.main;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import vn.binhld.hola.R;
 
