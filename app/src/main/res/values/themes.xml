@@ -11,11 +11,13 @@
         <item name="colorOnSecondary">@color/secondaryLightColor</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">false</item>
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Hola.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_bacground</item>
-        <item name="android:windowFullscreen">true</item>
+    <style name="Theme.Hola.Splash">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/white</item>
     </style>
 </resources>
