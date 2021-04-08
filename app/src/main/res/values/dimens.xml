@@ -5,5 +5,5 @@
     <dimen name="splash_icon_width">128dp</dimen>
     <dimen name="splash_icon_height">128dp</dimen>
     <dimen name="main_divider_height">1dp</dimen>
-
+    <dimen name="main_tab_elevation">4dp</dimen>
 </resources>

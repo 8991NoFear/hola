@@ -8,11 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Hola">
+        android:theme="@style/Hola">
 
         <activity
             android:name=".ui.splash.SpashActivity"
-            android:theme="@style/Theme.Hola.Splash">
+            android:theme="@style/Hola.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +21,7 @@
 
         <activity
             android:name=".ui.main.MainActivity"
-            android:theme="@style/Theme.Hola.Main">
+            android:theme="@style/Hola.Main">
 
         </activity>
     </application>

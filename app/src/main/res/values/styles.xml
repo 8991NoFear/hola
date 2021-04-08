@@ -1,6 +1,33 @@
 <resources>
-    <style name="Tab">
-        <item name="strokeColor">@color/primaryLightColor</item>
-        <item name="strokeWidth">5dp</item>
+
+    <!-- THEMES -->
+
+    <!-- Base application theme. -->
+    <style name="Hola" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <!-- MainActivity -->
+    <style name="Hola.Main">
+
+    </style>
+
+    <!-- SpashActivity -->
+    <style name="Hola.Splash">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
 </resources>
