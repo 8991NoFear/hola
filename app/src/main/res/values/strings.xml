@@ -4,4 +4,13 @@
     <string name="main_menu_settings">settings</string>
     <string name="main_searchable_label">@string/app_name</string>
     <string name="main_searchable_hint">enter people or group</string>
+
+    <!--LoginActivity-->
+    <string name="hola_hint_username">username</string>
+    <string name="hola_hint_password">password</string>
+    <string name="hola_button_login">login</string>
+    <string name="hola_button_forget">forget password?</string>
+    <string name="hola_button_signup">new user? signup</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
