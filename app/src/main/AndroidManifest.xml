@@ -22,7 +22,18 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:theme="@style/Hola.Main">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".MainSearchableActivity" />
+        </activity>
 
+        <activity android:name=".MainSearchableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/main_searchable" />
         </activity>
     </application>
 

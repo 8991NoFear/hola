@@ -2,6 +2,7 @@ package vn.binhld.hola.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        MenuItem searchMenuItem = (MenuItem) menu.findItem(R.id.search_icon);
+        SearchView searchView = (SearchView) searchMenuItem.getActionView();
+        searchView.setQueryHint(getResources().getString(R.string.main_searchable_hint));
         return super.onCreateOptionsMenu(menu);
     }
 
