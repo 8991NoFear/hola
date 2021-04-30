@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Hola">
         <activity
-            android:name=".ui.auth.LoginActivity">
-
-        </activity>
+            android:name=".ui.auth.ForgetPasswordActivity"
+            android:parentActivityName=".ui.auth.LoginActivity"></activity>
+        <activity
+            android:name=".ui.auth.SignupActivity"
+            android:parentActivityName=".ui.auth.LoginActivity" />
+        <activity android:name=".ui.auth.LoginActivity" />
         <activity
             android:name=".ui.splash.SpashActivity"
             android:theme="@style/Hola.Splash">
