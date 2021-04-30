@@ -17,12 +17,14 @@
 
     <!-- SignupActivity-->
     <string name="hola_button_signup_s">sigup now</string>
+    <string name="title_actionbar_s">signup</string>
 
     <!-- ForgetPasswordActivity-->
-    <string name="hola_button_send_reset_password_email">send me a reset password email</string>
+    <string name="hola_button_send_reset_password_email">send me a reset email</string>
     <string name="alert_send_reset_password_email_body">we have already sent you an reset password email, please check it in your email box</string>
     <string name="alert_send_reset_password_email_title">reset password email</string>
     <string name="alert_send_reset_password_email_positive_button">ok</string>
+    <string name="title_actionbar_f">reset password</string>
 
     <!-- error message-->
     <string name="err_email_format">wrong email format</string>
@@ -31,7 +33,5 @@
     <string name="err_password_too_short">password must be greater or equal 6 digits</string>
     <string name="err_repassword">repassword does not match with password</string>
     <string name="err_username_password">username or password is incorrect</string>
-
-
 
 </resources>

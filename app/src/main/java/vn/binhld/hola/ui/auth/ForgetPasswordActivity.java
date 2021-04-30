@@ -34,6 +34,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
 
+        getSupportActionBar().setTitle(R.string.title_actionbar_f);
+
         emailLayoutF = findViewById(R.id.email_layout_f);
         emailEditTextF = findViewById(R.id.email_edit_text_f);
 
