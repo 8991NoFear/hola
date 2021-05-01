@@ -6,4 +6,6 @@
     <dimen name="splash_icon_height">128dp</dimen>
     <dimen name="main_divider_height">1dp</dimen>
     <dimen name="main_tab_elevation">4dp</dimen>
+    <dimen name="dialog_avatar_width">48dp</dimen>
+    <dimen name="dialog_avatar_height">48dp</dimen>
 </resources>

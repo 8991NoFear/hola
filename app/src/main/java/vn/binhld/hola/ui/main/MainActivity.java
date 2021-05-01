@@ -7,7 +7,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,7 +20,7 @@ import vn.binhld.hola.ui.auth.LoginActivity;
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout = null;
     ViewPager viewPager = null;
-    MyAdapter myAdapter = null;
+    MyPagerAdapter myPagerAdapter = null;
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
@@ -32,15 +31,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        if (mUser == null) {
+            redirectToLogin();
+        }
+
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
         tabLayout.setupWithViewPager(viewPager); // rang buoc tabLayout voi viewPager
 
-        myAdapter = new MyAdapter(getSupportFragmentManager()); // can co FragmentManager moi tao duoc MyAdapter
-        viewPager.setAdapter(myAdapter); // rang buoc viewPager voi myAdapter
+        myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager()); // can co FragmentManager moi tao duoc MyAdapter
+        viewPager.setAdapter(myPagerAdapter); // rang buoc viewPager voi myAdapter
 
-        mAuth = FirebaseAuth.getInstance();
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -50,9 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     // do nothing
                 } else {
                     // user signed out
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
+                    redirectToLogin();
                 }
             }
         };
@@ -82,5 +84,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         mAuth.removeAuthStateListener(mAuthStateListener);
+    }
+
+    public void redirectToLogin() {
+        // user signed out
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_avatar"
+        android:layout_width="@dimen/dialog_avatar_width"
+        android:layout_height="@dimen/dialog_avatar_height"
+        app:cardCornerRadius="@dimen/dialog_avatar_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/dialog_avatar_width"
+            android:layout_height="@dimen/dialog_avatar_height"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_alias_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintBottom_toTopOf="@+id/tv_last_message"
+        app:layout_constraintStart_toEndOf="@+id/cv_avatar"
+        app:layout_constraintTop_toTopOf="@+id/cv_avatar"
+        tools:text="Le Dinh Binh" />
+
+    <TextView
+        android:id="@+id/tv_last_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_avatar"
+        app:layout_constraintStart_toStartOf="@+id/tv_alias_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_alias_name"
+        tools:text="hey what's sup bro" />
+
+    <TextView
+        android:id="@+id/tv_last_sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintStart_toEndOf="@+id/tv_last_message"
+        app:layout_constraintTop_toTopOf="@+id/tv_last_message"
+        tools:text="5 minutes ago" />
+</androidx.constraintlayout.widget.ConstraintLayout>

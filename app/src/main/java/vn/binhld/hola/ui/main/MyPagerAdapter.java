@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-class MyAdapter extends FragmentStatePagerAdapter {
-    public MyAdapter(@NonNull FragmentManager fm) {
+class MyPagerAdapter extends FragmentStatePagerAdapter {
+    public MyPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
