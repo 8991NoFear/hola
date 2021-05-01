@@ -59,10 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         passwordLayout = findViewById(R.id.password_layout);
 
         mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        if (user != null) {
-            success();
-        }
     }
 
     public void login(View v) {
@@ -130,6 +126,15 @@ public class LoginActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
 
             }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            success();
         }
     }
 }

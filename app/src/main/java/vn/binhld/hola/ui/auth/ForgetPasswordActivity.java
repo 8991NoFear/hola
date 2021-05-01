@@ -40,10 +40,6 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         emailEditTextF = findViewById(R.id.email_edit_text_f);
 
         mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        if (user != null) {
-            success();
-        }
     }
 
     private void success() {
@@ -80,5 +76,14 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            success();
+        }
     }
 }

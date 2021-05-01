@@ -51,10 +51,6 @@ public class SignupActivity extends AppCompatActivity {
         repasswordEditTextS = findViewById(R.id.repassword_edit_text_s);
 
         mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        if (user != null) {
-            success();
-        }
     }
 
     public void signup(View v) {
@@ -105,4 +101,12 @@ public class SignupActivity extends AppCompatActivity {
         emailLayoutS.setError(getString(R.string.err_email_exits));
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            success();
+        }
+    }
 }

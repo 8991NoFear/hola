@@ -5,19 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import vn.binhld.hola.R;
+import vn.binhld.hola.ui.auth.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout = null;
     ViewPager viewPager = null;
     MyAdapter myAdapter = null;
+
+    FirebaseAuth mAuth;
+    FirebaseUser mUser;
+    FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,23 @@ public class MainActivity extends AppCompatActivity {
 
         myAdapter = new MyAdapter(getSupportFragmentManager()); // can co FragmentManager moi tao duoc MyAdapter
         viewPager.setAdapter(myAdapter); // rang buoc viewPager voi myAdapter
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                mUser = mAuth.getCurrentUser();
+                if (mUser != null) {
+                    // user signed in
+                    // do nothing
+                } else {
+                    // user signed out
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
     }
 
     @Override
@@ -45,5 +70,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mAuth.removeAuthStateListener(mAuthStateListener);
     }
 }
