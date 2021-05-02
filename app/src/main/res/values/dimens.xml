@@ -8,4 +8,10 @@
     <dimen name="main_tab_elevation">4dp</dimen>
     <dimen name="dialog_avatar_width">48dp</dimen>
     <dimen name="dialog_avatar_height">48dp</dimen>
+    <dimen name="chat_bottom_bar_height">32dp</dimen>
+    <dimen name="chat_bottom_bar_width">32dp</dimen>
+    <dimen name="chat_bottom_bar_icon_width">24dp</dimen>
+    <dimen name="chat_bottom_bar_icon_height">24dp</dimen>
+    <dimen name="chat_avatar_width">16dp</dimen>
+    <dimen name="chat_avatar_height">16dp</dimen>
 </resources>

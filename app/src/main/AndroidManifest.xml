@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Hola">
+        <activity android:name=".ui.chat.ChatActivity"></activity>
         <activity
             android:name=".ui.auth.ForgetPasswordActivity"
-            android:parentActivityName=".ui.auth.LoginActivity"></activity>
+            android:parentActivityName=".ui.auth.LoginActivity" />
         <activity
             android:name=".ui.auth.SignupActivity"
             android:parentActivityName=".ui.auth.LoginActivity" />

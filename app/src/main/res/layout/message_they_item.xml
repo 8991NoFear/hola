@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_chat_avatar_they"
+        android:layout_width="@dimen/chat_avatar_width"
+        android:layout_height="@dimen/chat_avatar_height"
+        app:cardCornerRadius="@dimen/dialog_avatar_height"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_chat_message_they"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_chat_avatar_they"
+            android:layout_width="@dimen/chat_avatar_width"
+            android:layout_height="@dimen/chat_avatar_height"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_chat_message_they"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:cardBackgroundColor="@color/secondaryLightColor"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cv_chat_avatar_they"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtv_chat_message_they"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="260dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                tools:text="hello hello hello world hello world world hello world hello world world" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtv_chat_sent_they"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginEnd="4dp"
+                tools:text="March 15" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
