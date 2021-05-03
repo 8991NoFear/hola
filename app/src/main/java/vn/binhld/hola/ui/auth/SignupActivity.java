@@ -3,8 +3,10 @@ package vn.binhld.hola.ui.auth;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -16,15 +18,17 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import vn.binhld.hola.R;
 import vn.binhld.hola.helper.RegexCheck;
-import vn.binhld.hola.ui.main.MainActivity;
+import vn.binhld.hola.model.User;
+import vn.binhld.hola.repository.AppRepository;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = SignupActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
-    private FirebaseUser user;
+    private FirebaseUser mUser;
 
     // views
     private TextInputLayout emailLayoutS;
@@ -79,8 +83,29 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success");
+
+                    mUser = mAuth.getCurrentUser();
+                    String displayName = mUser.getDisplayName();
+                    if (displayName == null) {
+                        displayName = mUser.getEmail().split("@")[0];
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(displayName)
+                                .setPhotoUri(Uri.parse("https://firebasestorage.googleapis.com/v0/b/hola-4caec.appspot.com/o/default_avatar.jpg?alt=media&token=99a9349e-d74f-4496-9dcd-37e7d4a96791"))
+                                .build();
+                        mUser.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "User profile updated.");
+                                }
+                            }
+                        });
+                    }
+
+                    User newUser = new User(displayName, null, null, null);
+                    AppRepository.getInstance().pushUser(newUser);
+
                     success();
                 } else {
                     // If sign in fails, display a message to the user.
@@ -104,8 +129,8 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        user = mAuth.getCurrentUser();
-        if (user != null) {
+        mUser = mAuth.getCurrentUser();
+        if (mUser != null) {
             success();
         }
     }
