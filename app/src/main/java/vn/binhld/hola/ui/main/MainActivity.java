@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import vn.binhld.hola.R;
 import vn.binhld.hola.ui.auth.LoginActivity;

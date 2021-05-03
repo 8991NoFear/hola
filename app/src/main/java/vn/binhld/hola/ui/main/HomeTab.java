@@ -8,10 +8,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import vn.binhld.hola.R;
+import vn.binhld.hola.model.User;
 
 public class HomeTab extends Fragment {
 
@@ -32,7 +35,14 @@ public class HomeTab extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(mLayout);
 
+        setUpViewModel();
+
         return view;
+    }
+
+    private void setUpViewModel() {
+        HomeTabViewModel viewModel = new ViewModelProvider(this).get(HomeTabViewModel.class);
+        LiveData<User> userLiveData = viewModel.getUserLiveData();
     }
 
 }
